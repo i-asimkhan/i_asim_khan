@@ -21,9 +21,7 @@ class IntoActions extends StatelessWidget {
         },
         width: 160,
       ),
-      context.width < DeviceType.ipad.getMaxWidth()
-          ? const SizedBox(height: 6)
-          : const SizedBox(width: 32),
+      const SizedBox(width: 32),
       CustomButton(
         label: AppBarHeaders.projects.getString(),
         icon: Icons.remove_red_eye,
@@ -34,14 +32,9 @@ class IntoActions extends StatelessWidget {
         width: 160,
       ),
     ];
-    return context.width < DeviceType.ipad.getMaxWidth()
-        ? Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: actions,
-          )
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: actions,
-          );
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: actions,
+    );
   }
 }

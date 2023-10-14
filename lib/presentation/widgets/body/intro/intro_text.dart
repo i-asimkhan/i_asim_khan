@@ -4,6 +4,7 @@ import 'package:i_asim_khan/core/theme/app_text_theme.dart';
 import 'package:i_asim_khan/core/utils/app_enums.dart';
 import 'package:i_asim_khan/core/utils/app_extensions.dart';
 import 'package:i_asim_khan/core/utils/app_strings.dart';
+import 'package:i_asim_khan/core/utils/config/responsive.dart';
 import 'intro_actions.dart';
 
 class IntroText extends StatelessWidget {
@@ -36,18 +37,39 @@ class IntroText extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         SizedBox(
-          width: context.width < DeviceType.mobile.getMaxWidth()
-              ? context.width - 20
-              : context.width / 2.5,
-          child: Text(
-            AppStrings.introMsg,
-            style: context.width < DeviceType.ipad.getMaxWidth()
-                ? context.textTheme.titleSmall
-                : context.textTheme.titleMedium,
-            textAlign: _getTextAlign(context.width),
-            softWrap: true,
-          ),
-        ),
+            width: Responsive.isMobile(context)
+                ? context.width - 20
+                : context.width / 2.5,
+            child: Column(
+              children: [
+                Text(
+                  AppStrings.introMessageLine1 + AppStrings.introMessageLine2,
+                  style: context.width < DeviceType.ipad.getMaxWidth()
+                      ? context.textTheme.titleSmall
+                      : context.textTheme.titleMedium,
+                  textAlign: _getTextAlign(context.width),
+                  softWrap: true,
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  AppStrings.introMessageLine3,
+                  style: context.width < DeviceType.ipad.getMaxWidth()
+                      ? context.textTheme.titleSmall
+                      : context.textTheme.titleMedium,
+                  textAlign: _getTextAlign(context.width),
+                  softWrap: true,
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  AppStrings.introMessageLine4,
+                  style: context.width < DeviceType.ipad.getMaxWidth()
+                      ? context.textTheme.titleSmall
+                      : context.textTheme.titleMedium,
+                  textAlign: _getTextAlign(context.width),
+                  softWrap: true,
+                ),
+              ],
+            )),
         const SizedBox(height: 30),
         const IntoActions(),
       ],
