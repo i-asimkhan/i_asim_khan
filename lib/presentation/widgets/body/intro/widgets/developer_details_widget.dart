@@ -15,8 +15,6 @@ class DeveloperDetailsWidget extends StatelessWidget {
         ?.copyWith(color: context.colors.onBackground);
     TextStyle? linkStyle =
         context.textTheme.bodyMedium?.copyWith(color: context.colors.primary);
-    TextStyle? seperatorStyle =
-        context.textTheme.bodyMedium?.copyWith(color: context.colors.primary);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
