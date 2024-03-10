@@ -21,8 +21,6 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
 
   @override
   Widget build(BuildContext context) {
-    itemColor = context.colors.onSurface;
-
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 15,
@@ -31,7 +29,7 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
       decoration: BoxDecoration(
         border: Border.all(
           color: itemColor,
-          width: 3,
+          width: 1,
         ),
         borderRadius: BorderRadius.circular(16),
       ),
@@ -49,13 +47,13 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
             SvgPicture.asset(
               widget.service.logo,
               height: context.width < DeviceType.mobile.getMinWidth() ? 40 : 56,
+              color: itemColor,
             ),
             const SizedBox(height: 16),
             FittedBox(
               child: Text(
                 widget.service.service,
-                style:
-                    context.textTheme.titleMedium?.copyWith(color: itemColor),
+                style: context.textTheme.bodyMedium?.copyWith(color: itemColor),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -64,7 +62,8 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
               Flexible(
                 child: AutoSizeText(
                   widget.service.description,
-                  style: context.textTheme.bodyLarge,
+                  style:
+                      context.textTheme.bodySmall?.copyWith(color: itemColor),
                   minFontSize: 8,
                   textAlign: TextAlign.center,
                 ),

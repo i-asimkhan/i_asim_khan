@@ -1,17 +1,21 @@
 class Project {
-  final String name;
-  final String imageUrl;
+  final String title;
+  final String subTitle;
   final String description;
-  final String? githubRepoLink;
+  final String imageUrl;
   final String? previewLink;
   final String? googlePlay;
+  final String? githubRepoLink;
+  final String? researchLink;
 
   const Project({
-    required this.name,
-    required this.imageUrl,
+    required this.title,
+    required this.subTitle,
     required this.description,
-    this.githubRepoLink,
+    required this.imageUrl,
     this.previewLink,
     this.googlePlay,
+    this.githubRepoLink,
+    this.researchLink,
   });
 }

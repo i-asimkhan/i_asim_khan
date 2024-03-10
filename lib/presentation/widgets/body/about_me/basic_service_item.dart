@@ -20,8 +20,6 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
 
   @override
   Widget build(BuildContext context) {
-    itemColor = context.colors.onSurface;
-
     return Container(
       padding: const EdgeInsets.all(10),
       color: context.colors.primaryLight,
@@ -39,13 +37,15 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
             SvgPicture.asset(
               widget.service.logo,
               height: 48,
+              color: itemColor,
             ),
             const SizedBox(height: 16),
             if (context.width > DeviceType.mobile.getMinWidth())
               FittedBox(
                 child: Text(
                   widget.service.service,
-                  style: context.textTheme.bodyMedium,
+                  style:
+                      context.textTheme.bodyMedium?.copyWith(color: itemColor),
                   textAlign: TextAlign.center,
                 ),
               ),

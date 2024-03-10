@@ -36,7 +36,7 @@ class DetailedServicesGrid extends StatelessWidget {
     } else if (deviceWidth < DeviceType.smallScreenLaptop.getMaxWidth()) {
       return 3;
     } else {
-      return numOfServices > 3 ? 3 : numOfServices;
+      return numOfServices > 4 ? 4 : numOfServices;
     }
   }
 }

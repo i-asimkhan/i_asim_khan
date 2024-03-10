@@ -21,6 +21,7 @@ class AppColors extends ThemeExtension<AppColors> {
     required this.onError,
     required this.success,
     required this.onSuccess,
+    required this.linkColor,
   });
 
   final Brightness brightness;
@@ -41,6 +42,7 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color onError;
   final Color success;
   final Color onSuccess;
+  final Color linkColor;
 
   @override
   ThemeExtension<AppColors> copyWith({
@@ -63,7 +65,7 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? onError,
     Color? success,
     Color? onSuccess,
-    LinearGradient? linearGradient,
+    Color? linkColor,
   }) {
     return AppColors(
       brightness: brightness ?? this.brightness,
@@ -84,6 +86,7 @@ class AppColors extends ThemeExtension<AppColors> {
       onError: onError ?? this.onError,
       success: success ?? this.success,
       onSuccess: onSuccess ?? this.onSuccess,
+      linkColor: linkColor ?? this.linkColor,
     );
   }
 
@@ -117,6 +120,7 @@ class AppColors extends ThemeExtension<AppColors> {
       onError: Color.lerp(onError, other.onError, t) ?? onError,
       success: Color.lerp(success, other.success, t) ?? success,
       onSuccess: Color.lerp(onSuccess, other.onSuccess, t) ?? onSuccess,
+      linkColor: Color.lerp(linkColor, other.linkColor, t) ?? linkColor,
     );
   }
 }

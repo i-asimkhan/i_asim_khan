@@ -12,8 +12,8 @@ class SocialMediaIcons extends StatelessWidget {
     return const Wrap(
       children: [
         SocialMediaIconBtn(
-          icon: FontAwesomeIcons.facebook,
-          link: SocialLinks.facebook,
+          icon: FontAwesomeIcons.github,
+          link: SocialLinks.github,
         ),
         SocialMediaIconBtn(
           icon: FontAwesomeIcons.instagram,
