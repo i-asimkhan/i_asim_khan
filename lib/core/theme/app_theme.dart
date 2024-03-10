@@ -25,6 +25,7 @@ class AppTheme {
         onSurfaceVariant: Color(0xFFBFCBD0),
         success: Color(0xFF063B4B),
         onSuccess: Colors.white,
+        linkColor: Colors.blue,
       );
 
   static AppColors get darkColors => const AppColors(
@@ -46,6 +47,7 @@ class AppTheme {
         onSurfaceVariant: Color(0xFFBFCBD0),
         success: Color(0xFF063B4B),
         onSuccess: Colors.white,
+        linkColor: Colors.blue,
       );
 
   static get theme {

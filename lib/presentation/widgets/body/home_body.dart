@@ -4,6 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i_asim_khan/core/utils/app_extensions.dart';
 import 'package:i_asim_khan/presentation/blocs/home_bloc/home_bloc.dart';
 import 'package:i_asim_khan/presentation/widgets/app_bar/vertical_headers_builder.dart';
+import 'package:i_asim_khan/presentation/widgets/body/about_me/about_me_section.dart';
+import 'package:i_asim_khan/presentation/widgets/body/contact/contact_section.dart';
+import 'package:i_asim_khan/presentation/widgets/body/projects/projects_section.dart';
 import 'intro/intro_section.dart';
 
 class HomeBody extends StatefulWidget {
@@ -33,7 +36,6 @@ class _HomeBodyState extends State<HomeBody> {
     double introHeight = introKey.currentContext!.size!.height;
     double aboutHeight = aboutKey.currentContext!.size!.height;
     double projectHeight = projectKey.currentContext!.size!.height;
-    // double contactHeight = contactKey.currentContext!.size!.height;
     _controller.addListener(() {
       double controllerHeight = _controller.offset;
       if (_controller.position.extentAfter == 0.0) {
@@ -99,9 +101,9 @@ class _HomeBodyState extends State<HomeBody> {
               child: Column(
                 children: [
                   IntroSection(key: introKey),
-                  // AboutMeSection(key: aboutKey),
-                  // ProjectsSection(key: projectKey),
-                  // ContactSection(key: contactKey),
+                  AboutMeSection(key: aboutKey),
+                  ProjectsSection(key: projectKey),
+                  ContactSection(key: contactKey),
                 ],
               ),
             ),

@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:i_asim_khan/core/theme/app_colors.dart';
 import 'package:i_asim_khan/core/theme/app_text_theme.dart';
 import 'package:i_asim_khan/core/utils/app_enums.dart';
@@ -21,8 +20,6 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
 
   @override
   Widget build(BuildContext context) {
-    itemColor = context.colors.onSurface;
-
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 15,
@@ -31,7 +28,7 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
       decoration: BoxDecoration(
         border: Border.all(
           color: itemColor,
-          width: 3,
+          width: 1,
         ),
         borderRadius: BorderRadius.circular(16),
       ),
@@ -46,16 +43,16 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              widget.service.logo,
-              height: context.width < DeviceType.mobile.getMinWidth() ? 40 : 56,
+            Icon(
+              widget.service.icon,
+              // size: 24,
+              color: itemColor,
             ),
             const SizedBox(height: 16),
             FittedBox(
               child: Text(
                 widget.service.service,
-                style:
-                    context.textTheme.titleMedium?.copyWith(color: itemColor),
+                style: context.textTheme.bodyMedium?.copyWith(color: itemColor),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -64,7 +61,8 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
               Flexible(
                 child: AutoSizeText(
                   widget.service.description,
-                  style: context.textTheme.bodyLarge,
+                  style:
+                      context.textTheme.bodySmall?.copyWith(color: itemColor),
                   minFontSize: 8,
                   textAlign: TextAlign.center,
                 ),

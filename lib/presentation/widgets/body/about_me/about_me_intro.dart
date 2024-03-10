@@ -15,12 +15,12 @@ class AboutMeIntro extends StatelessWidget {
         FittedBox(
           child: Text(
             AppBarHeaders.aboutMe.getString(),
-            style: context.textTheme.bodySmall,
+            style: context.textTheme.headlineMedium,
           ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 12),
         Text(
-          AppStrings.aboutMeMsg,
+          "${AppStrings.hello} ${AppStrings.developerName}, ${AppStrings.aboutMsg1}\n\n${AppStrings.aboutMsg2}\n\n${AppStrings.aboutMsg3}",
           style: context.width < DeviceType.mobile.getMaxWidth()
               ? context.textTheme.bodySmall
               : context.textTheme.bodySmall,

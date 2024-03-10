@@ -14,16 +14,16 @@ class ContactIntro extends StatelessWidget {
         FittedBox(
           child: Text(
             AppStrings.contactWithMe,
-            style: context.textTheme.headlineMedium,
+            style: context.textTheme.titleLarge,
           ),
         ),
         const SizedBox(height: 8),
         Text(
           AppStrings.contactMsg,
-          style: context.textTheme.displayMedium,
+          style: context.textTheme.titleSmall,
           softWrap: true,
         ),
-        const SizedBox(height: 8),
+        const Expanded(child: SizedBox()),
         const SocialMediaIcons(),
       ],
     );

@@ -22,19 +22,28 @@ class ProjectItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ProjectImage(imageUrl: project.imageUrl),
-          const SizedBox(height: 16),
+          const SizedBox(height: 12),
           FittedBox(
             child: Text(
-              project.name,
+              project.title,
               style: context.textTheme.titleMedium
                   ?.copyWith(color: context.colors.onSurface),
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 4),
+          FittedBox(
+            child: Text(
+              project.subTitle,
+              style: context.textTheme.titleSmall?.copyWith(
+                color: context.colors.primary,
+              ),
+            ),
+          ),
+          const SizedBox(height: 4),
           Expanded(
             child: AutoSizeText(
               project.description,
-              style: context.textTheme.titleSmall,
+              style: context.textTheme.bodySmall,
               minFontSize: 12,
               maxLines: 4,
             ),

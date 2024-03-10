@@ -14,7 +14,7 @@ class DetailedServicesSection extends StatelessWidget {
         FittedBox(
           child: Text(
             AppStrings.servicesIOffer,
-            style: context.textTheme.titleLarge,
+            style: context.textTheme.headlineMedium,
           ),
         ),
         const SizedBox(height: 32),

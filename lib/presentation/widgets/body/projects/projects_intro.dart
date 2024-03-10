@@ -17,11 +17,11 @@ class ProjectsIntro extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        Text(
-          AppStrings.projectsMsg,
-          style: context.textTheme.titleSmall,
-          softWrap: true,
-        ),
+        // Text(
+        //   AppStrings.projectsMsg,
+        //   style: context.textTheme.titleSmall,
+        //   softWrap: true,
+        // ),
       ],
     );
   }
