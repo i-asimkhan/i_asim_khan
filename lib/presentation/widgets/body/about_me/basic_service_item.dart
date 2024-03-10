@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:i_asim_khan/core/theme/app_colors.dart';
 import 'package:i_asim_khan/core/theme/app_text_theme.dart';
 import 'package:i_asim_khan/core/utils/app_enums.dart';
@@ -34,9 +33,9 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              widget.service.logo,
-              height: 48,
+            Icon(
+              widget.service.icon,
+              // size: 24,
               color: itemColor,
             ),
             const SizedBox(height: 16),

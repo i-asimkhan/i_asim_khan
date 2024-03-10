@@ -44,9 +44,9 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              widget.service.logo,
-              height: context.width < DeviceType.mobile.getMinWidth() ? 40 : 56,
+            Icon(
+              widget.service.icon,
+              // size: 24,
               color: itemColor,
             ),
             const SizedBox(height: 16),

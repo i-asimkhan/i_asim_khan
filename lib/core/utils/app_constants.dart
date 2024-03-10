@@ -1,43 +1,43 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:i_asim_khan/data/models/custom_service.dart';
 import 'package:i_asim_khan/data/models/project.dart';
-import 'app_assets.dart';
 
 abstract class AppConstants {
   static const double appBarHeight = 80;
   static const List<CustomService> services = [
     CustomService(
       service: 'Mobile App Development ',
-      logo: AppAssets.androidLogo,
+      icon: FontAwesomeIcons.android,
       description:
           'I can elevate your business with my expertise in iOS app development using Swift and Objective-C. Additionally, I specialize in crafting cross-platform applications with Flutter and Dart for a seamless user experience.',
     ),
     CustomService(
       service: 'Blockchain Integration and Development',
-      logo: AppAssets.uiDesignLogo,
+      icon: FontAwesomeIcons.connectdevelop,
       description:
           'I can seamlessly integrate blockchain for enhanced security and transparency. My expertise includes smart contracts development, automating and securing transactions. Explore web3 development and groundbreaking initiatives with confidence',
     ),
     CustomService(
       service: 'Front-End Development',
-      logo: AppAssets.scrappingLogo,
+      icon: FontAwesomeIcons.html5,
       description:
           'I can transform your digital presence with visually stunning and responsive web interfaces. Specializing in HTML, CSS, TypeScript, and SwiftUI, I ensure an exceptional user experience',
     ),
     CustomService(
       service: 'Financial Technology Solutions',
-      logo: AppAssets.scrappingLogo,
+      icon: FontAwesomeIcons.dollarSign,
       description:
           'I can innovate your financial services with my solutions, from digital tokens integration to Nextgen Wallet App development. Stay at the forefront of the digital banking revolution.',
     ),
     CustomService(
       service: 'Technology Consultation',
-      logo: AppAssets.scrappingLogo,
+      icon: FontAwesomeIcons.question,
       description:
           'I can help you stay competitive with my technology consultation. I guide businesses in adapting to emerging technologies, fostering a culture of continuous learning and adaptability.',
     ),
     CustomService(
       service: 'Project Management',
-      logo: AppAssets.scrappingLogo,
+      icon: FontAwesomeIcons.diagramProject,
       description:
           'I can ensure project success with my comprehensive management services. From requirements analysis to deployment, I oversee the full lifecycle, emphasizing effective team collaboration and leadership.',
     ),
@@ -45,13 +45,13 @@ abstract class AppConstants {
     // rarely used
     CustomService(
       service: 'Backend Development Solutions',
-      logo: AppAssets.scrappingLogo,
+      icon: FontAwesomeIcons.servicestack,
       description:
           'I can ensure project success with my comprehensive management services. From requirements analysis to deployment, I oversee the full lifecycle, emphasizing effective team collaboration and leadership.',
     ),
     CustomService(
       service: 'Emerging Technologies Integration',
-      logo: AppAssets.scrappingLogo,
+      icon: FontAwesomeIcons.robot,
       description:
           'I can ensure project success with my comprehensive management services. From requirements analysis to deployment, I oversee the full lifecycle, emphasizing effective team collaboration and leadership.',
     ),

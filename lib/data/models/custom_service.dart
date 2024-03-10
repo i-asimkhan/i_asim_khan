@@ -1,11 +1,13 @@
+import 'package:flutter/material.dart';
+
 class CustomService {
   final String service;
-  final String logo;
+  final IconData icon;
   final String description;
 
   const CustomService({
     required this.service,
-    required this.logo,
+    required this.icon,
     required this.description,
   });
 }
