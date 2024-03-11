@@ -39,9 +39,48 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+  <!-- Website loader style -->
+  <style>
+    body {
+      background-color: #001721;
+    }
+
+    .loadingElements {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .loader {
+      background: linear-gradient(102deg, rgba(255, 255, 255, 0.08) 70%, rgba(117, 98, 224, 1) 80%, rgba(150, 135, 229, 1) 90%, rgba(207, 200, 244, 1) 100%);
+      -webkit-mask: radial-gradient(farthest-side, rgba(117, 98, 224, 1) calc(100% - 2.5px), #fff 0);
+      mask: radial-gradient(farthest-side, #0000 calc(100% - 2.5px), #fff 0);
+      border-radius: 50%;
+      width: 96px;
+      height: 96px;
+      position: absolute;
+      animation: rot 2s linear infinite;
+    }
+
+    @keyframes rot {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
 </head>
 
 <body>
+
+  <div class="loadingElements">
+    <div class="loader"></div>
+  </div>
+
+
   <script>
     window.addEventListener('load', function (ev) {
       // Download main.dart.js

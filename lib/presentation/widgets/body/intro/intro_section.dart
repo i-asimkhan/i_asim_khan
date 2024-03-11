@@ -68,195 +68,198 @@ class IntroSection extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            SizedBox(
-              height: 350,
-              child: Column(
-                children: [
-                  Container(
-                    child: Responsive.isMobile(context)
-                        ? const Column(
-                            children: [],
-                          )
-                        : Row(
-                            children: [
-                              const Expanded(
-                                child: DeveloperDetailsWidget(),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    DescriptionWidget(
-                                      imagePath: AppAssets.dtccLogo,
-                                      title: AppStrings.dtcc,
-                                      onTap: () =>
-                                          launchUrl(AppUrls.linkToDtcc),
-                                    ),
-                                    const SizedBox(
-                                      height: 8,
-                                    ),
-                                    DescriptionWidget(
-                                      imagePath: AppAssets.uetPeshawarLogo,
-                                      title: AppStrings.uetPeshawar,
-                                      onTap: () =>
-                                          launchUrl(AppUrls.linkToUetPesh),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                  ),
-                  Expanded(
-                    child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 25,
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+            Responsive.isMobile(context)
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const DeveloperDetailsWidget(),
+                      DescriptionWidget(
+                        imagePath: AppAssets.dtccLogo,
+                        title: AppStrings.dtcc,
+                        onTap: () => launchUrl(AppUrls.linkToDtcc),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      DescriptionWidget(
+                        imagePath: AppAssets.uetPeshawarLogo,
+                        title: AppStrings.uetPeshawar,
+                        onTap: () => launchUrl(AppUrls.linkToUetPesh),
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+                      skills,
+                      const SizedBox(
+                        height: 24,
+                      ),
+                      companies,
+                    ],
+                  )
+                : SizedBox(
+                    height: 350,
+                    child: Column(
+                      children: [
+                        Row(
                           children: [
-                            Expanded(
-                              child: Wrap(
-                                spacing: 18,
-                                runSpacing: 12,
-                                children: [
-                                  SkillChip(
-                                    title: AppStrings.skills.solidity,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.solidity)),
-                                  ),
-                                  SkillChip(
-                                    title: AppStrings.skills.rust,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.rust)),
-                                  ),
-                                  SkillChip(
-                                    title: AppStrings.skills.flutter,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.flutter)),
-                                  ),
-                                  SkillChip(
-                                    title: AppStrings.skills.ios,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.ios)),
-                                  ),
-                                  SkillChip(
-                                    title: AppStrings.skills.android,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.android)),
-                                  ),
-                                  SkillChip(
-                                    title: AppStrings.skills.dart,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.dart)),
-                                  ),
-                                  SkillChip(
-                                    title: AppStrings.skills.swift,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.swift)),
-                                  ),
-                                  SkillChip(
-                                    title: AppStrings.skills.swiftUI,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.swiftUI)),
-                                  ),
-                                  SkillChip(
-                                    title: AppStrings.skills.objc,
-                                    onPressed: () => launchUrl(Uri.parse(
-                                        AppStrings.twitterHashtag +
-                                            AppStrings.skills.objc)),
-                                  ),
-                                ],
-                              ),
+                            const Expanded(
+                              child: DeveloperDetailsWidget(),
                             ),
                             Expanded(
-                              child: Wrap(
-                                spacing: 24,
-                                runSpacing: 12,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  CompanyLogoItem(
+                                  DescriptionWidget(
                                     imagePath: AppAssets.dtccLogo,
-                                    onTap: () =>
-                                        launchUrl(AppUrls.linkToTwoFour54),
+                                    title: AppStrings.dtcc,
+                                    onTap: () => launchUrl(AppUrls.linkToDtcc),
                                   ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.securrencyLogo,
-                                    onTap: () =>
-                                        launchUrl(AppUrls.linkToSecurrency),
+                                  const SizedBox(
+                                    height: 8,
                                   ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.twoFour54Logo,
-                                    onTap: () =>
-                                        launchUrl(AppUrls.linkToTwoFour54),
-                                  ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.orbitStartupsLogo,
-                                    onTap: () =>
-                                        launchUrl(AppUrls.linkToOrbitStartups),
-                                  ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.codematicsLogo,
-                                    onTap: () =>
-                                        launchUrl(AppUrls.linkToCodematics),
-                                  ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.satsumaLogo,
-                                    onTap: () =>
-                                        launchUrl(AppUrls.linkToSatsuma),
-                                  ),
-                                  CompanyLogoItem(
+                                  DescriptionWidget(
                                     imagePath: AppAssets.uetPeshawarLogo,
+                                    title: AppStrings.uetPeshawar,
                                     onTap: () =>
-                                        launchUrl(AppUrls.linkToTwoFour54),
-                                  ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.careLogo,
-                                    onTap: () => launchUrl(AppUrls.linkToCare),
-                                  ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.innoventLogo,
-                                    onTap: () =>
-                                        launchUrl(AppUrls.linkToInnovent),
-                                  ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.mobioInteractiveLogo,
-                                    onTap: () => launchUrl(AppUrls.linkToMobio),
-                                  ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.tracreLogo,
-                                    onTap: () =>
-                                        launchUrl(AppUrls.linkToTwoFour54),
-                                  ),
-                                  CompanyLogoItem(
-                                    imagePath: AppAssets.wiotLogo,
-                                    onTap: () => launchUrl(AppUrls.linkToWiot),
+                                        launchUrl(AppUrls.linkToUetPesh),
                                   )
                                 ],
                               ),
                             ),
                           ],
-                        )),
+                        ),
+                        Expanded(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 25,
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(child: skills),
+                                Expanded(child: companies),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ),
-            ),
           ],
         ),
         const Positioned(
-          top: 100,
-          bottom: 100,
+          top: 280,
           right: 25,
           child: IntroCircleImageBox(),
         )
       ],
     );
   }
+
+  Widget get skills => Wrap(
+        spacing: 18,
+        runSpacing: 12,
+        children: [
+          SkillChip(
+            title: AppStrings.skills.solidity,
+            onPressed: () => launchUrl(Uri.parse(
+                AppStrings.twitterHashtag + AppStrings.skills.solidity)),
+          ),
+          SkillChip(
+            title: AppStrings.skills.rust,
+            onPressed: () => launchUrl(
+                Uri.parse(AppStrings.twitterHashtag + AppStrings.skills.rust)),
+          ),
+          SkillChip(
+            title: AppStrings.skills.flutter,
+            onPressed: () => launchUrl(Uri.parse(
+                AppStrings.twitterHashtag + AppStrings.skills.flutter)),
+          ),
+          SkillChip(
+            title: AppStrings.skills.ios,
+            onPressed: () => launchUrl(
+                Uri.parse(AppStrings.twitterHashtag + AppStrings.skills.ios)),
+          ),
+          SkillChip(
+            title: AppStrings.skills.android,
+            onPressed: () => launchUrl(Uri.parse(
+                AppStrings.twitterHashtag + AppStrings.skills.android)),
+          ),
+          SkillChip(
+            title: AppStrings.skills.dart,
+            onPressed: () => launchUrl(
+                Uri.parse(AppStrings.twitterHashtag + AppStrings.skills.dart)),
+          ),
+          SkillChip(
+            title: AppStrings.skills.swift,
+            onPressed: () => launchUrl(
+                Uri.parse(AppStrings.twitterHashtag + AppStrings.skills.swift)),
+          ),
+          SkillChip(
+            title: AppStrings.skills.swiftUI,
+            onPressed: () => launchUrl(Uri.parse(
+                AppStrings.twitterHashtag + AppStrings.skills.swiftUI)),
+          ),
+          SkillChip(
+            title: AppStrings.skills.objc,
+            onPressed: () => launchUrl(
+                Uri.parse(AppStrings.twitterHashtag + AppStrings.skills.objc)),
+          ),
+        ],
+      );
+
+  Widget get companies => Wrap(
+        spacing: 24,
+        runSpacing: 12,
+        children: [
+          CompanyLogoItem(
+            imagePath: AppAssets.dtccLogo,
+            onTap: () => launchUrl(AppUrls.linkToTwoFour54),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.securrencyLogo,
+            onTap: () => launchUrl(AppUrls.linkToSecurrency),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.twoFour54Logo,
+            onTap: () => launchUrl(AppUrls.linkToTwoFour54),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.orbitStartupsLogo,
+            onTap: () => launchUrl(AppUrls.linkToOrbitStartups),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.codematicsLogo,
+            onTap: () => launchUrl(AppUrls.linkToCodematics),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.satsumaLogo,
+            onTap: () => launchUrl(AppUrls.linkToSatsuma),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.uetPeshawarLogo,
+            onTap: () => launchUrl(AppUrls.linkToTwoFour54),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.careLogo,
+            onTap: () => launchUrl(AppUrls.linkToCare),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.innoventLogo,
+            onTap: () => launchUrl(AppUrls.linkToInnovent),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.mobioInteractiveLogo,
+            onTap: () => launchUrl(AppUrls.linkToMobio),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.tracreLogo,
+            onTap: () => launchUrl(AppUrls.linkToTwoFour54),
+          ),
+          CompanyLogoItem(
+            imagePath: AppAssets.wiotLogo,
+            onTap: () => launchUrl(AppUrls.linkToWiot),
+          )
+        ],
+      );
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i_asim_khan/core/utils/app_enums.dart';
-import 'package:i_asim_khan/core/utils/app_extensions.dart';
+import 'package:i_asim_khan/core/utils/config/responsive.dart';
 import 'contact_intro.dart';
 import 'contact_form.dart';
 
@@ -9,12 +8,20 @@ class ContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 500,
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 80),
-        child: context.width > DeviceType.ipad.getMaxWidth()
-            ? const Row(
+    return Responsive.isMobile(context)
+        ? const Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ContactIntro(),
+              SizedBox(height: 32),
+              ContactForm(),
+            ],
+          )
+        : const SizedBox(
+            height: 500,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 80),
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
@@ -23,16 +30,8 @@ class ContactSection extends StatelessWidget {
                   SizedBox(width: 32),
                   Expanded(child: ContactForm()),
                 ],
-              )
-            : const Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ContactIntro(),
-                  SizedBox(height: 32),
-                  ContactForm(),
-                ],
               ),
-      ),
-    );
+            ),
+          );
   }
 }
