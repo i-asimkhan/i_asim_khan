@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_asim_khan/core/theme/app_text_theme.dart';
+import 'package:i_asim_khan/core/utils/config/responsive.dart';
 import 'package:i_asim_khan/presentation/widgets/body/contact/social_medial_icons.dart';
 import 'package:i_asim_khan/core/utils/app_strings.dart';
 
@@ -23,8 +24,10 @@ class ContactIntro extends StatelessWidget {
           style: context.textTheme.titleSmall,
           softWrap: true,
         ),
-        const Expanded(child: SizedBox()),
-        const SocialMediaIcons(),
+        if (!Responsive.isMobile(context)) const Expanded(child: SizedBox()),
+        Responsive.isMobile(context)
+            ? const Center(child: SocialMediaIcons())
+            : const SocialMediaIcons(),
       ],
     );
   }
